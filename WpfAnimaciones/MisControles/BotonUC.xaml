@@ -6,6 +6,28 @@
              xmlns:local="clr-namespace:WpfAnimaciones.MisControles"
              mc:Ignorable="d" 
              d:DesignHeight="100" d:DesignWidth="200" >
+    <UserControl.Resources>
+        <Storyboard x:Key="EnterStoryboard">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="BaseRectangle">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF8F5D5D"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF2F3840"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="LeaveStoryboard">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="BaseRectangle">
+                <EasingColorKeyFrame KeyTime="0" Value="#FF2F3840"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF8F5D5D"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+            <BeginStoryboard Storyboard="{StaticResource EnterStoryboard}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+            <BeginStoryboard x:Name="EnterStoryboard_BeginStoryboard" Storyboard="{StaticResource LeaveStoryboard}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
     <Grid Name="BotonGrid" MouseLeftButtonDown="BotonGrid_MouseLeftButtonDown">
         <Border Margin="3" BorderThickness="2" x:Name="BaseRectangle" Background="#FF8F5D5D" CornerRadius="10,0,10,0" BorderBrush="#FF630904">
             <TextBlock Name="TituloTextBlock" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Foreground="white" TextWrapping="Wrap" />

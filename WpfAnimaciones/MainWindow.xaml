@@ -28,6 +28,9 @@
             <MisControles:BotonUC x:Name="Opcion3BotonUC" Titulo="Ejemplo 3" Grid.Row="3" Margin="2" Click="Opcion3BotonUC_Click" Cursor="Hand" />
             <MisControles:BotonUC x:Name="Opcion4BotonUC" Titulo="Ejemplo 4" Grid.Row="4" Margin="2" Click="Opcion4BotonUC_Click" Cursor="Hand" />
         </Grid>
+        <Grid Grid.Column="1" Name="ContenedorGrid">
+            
+        </Grid>
         <Grid/>
     </Grid>
 </Window>
