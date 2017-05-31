@@ -6,31 +6,43 @@
         xmlns:local="clr-namespace:WpfAnimaciones"
         xmlns:MisControles="clr-namespace:WpfAnimaciones.MisControles" x:Class="WpfAnimaciones.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="675">
+        Title="MainWindow" Height="485" Width="715"  WindowStyle="None"
+        AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="50"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <TextBlock Text="MENU DE OPCIONES" HorizontalAlignment="Center" FontSize="16"/>
+        <Path Width="705" Height="455" Canvas.Left="-2.5" Canvas.Top="-2.50003" Stretch="Fill" StrokeThickness="5" StrokeLineJoin="Round" Stroke="#FF22B434" Fill="#FF2B4F74" Data="F1 M 175.233,403.5C 176.066,405.694 176.5,407.949 176.5,410.25C 176.5,432.203 136.989,450 88.25,450C 39.5109,450 1.01725e-005,432.203 1.01725e-005,410.25C 1.01725e-005,396.414 15.6935,384.23 39.5,377.11L 39.5,67.7866C 38.187,67.9276 36.8523,68 35.5,68C 15.8939,68 0,52.7777 0,34C 0,15.2223 15.8939,0 35.5,0C 55.1061,0 71,15.2223 71,34L 70.9962,34.5L 629.004,34.5L 629,34C 629,15.2223 644.894,-3.05176e-005 664.5,-3.05176e-005C 684.106,-3.05176e-005 700,15.2223 700,34C 700,52.7776 684.106,68 664.5,68C 658.341,68 652.549,66.4979 647.5,63.8554L 647.5,373.897C 678.428,380.077 700,394.029 700,410.25C 700,432.203 660.489,450 611.75,450C 563.011,450 523.5,432.203 523.5,410.25C 523.5,407.949 523.934,405.694 524.767,403.5L 175.233,403.5 Z "/>
+        <Grid Margin="55">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="MENU DE OPCIONES" HorizontalAlignment="Center" FontSize="16" Foreground="White" />
 
-            <MisControles:BotonUC x:Name="Opcion1BotonUC" Titulo="Ejemplo 1" Grid.Row="1" Margin="2" Click="Opcion1BotonUC_Click" Cursor="Hand" />
-            <MisControles:BotonUC x:Name="Opcion2BotonUC" Titulo="Ejemplo 2" Grid.Row="2" Margin="2" Click="Opcion2BotonUC_Click" Cursor="Hand" />
-            <MisControles:BotonUC x:Name="Opcion3BotonUC" Titulo="Ejemplo 3" Grid.Row="3" Margin="2" Click="Opcion3BotonUC_Click" Cursor="Hand" />
-            <MisControles:BotonUC x:Name="Opcion4BotonUC" Titulo="Ejemplo 4" Grid.Row="4" Margin="2" Click="Opcion4BotonUC_Click" Cursor="Hand" />
+                <MisControles:BotonUC x:Name="Opcion1BotonUC" Titulo="Ejemplo 1" Grid.Row="1" Margin="2" Click="Opcion1BotonUC_Click" Cursor="Hand" />
+                <MisControles:BotonUC x:Name="Opcion2BotonUC" Titulo="Ejemplo 2" Grid.Row="2" Margin="2" Click="Opcion2BotonUC_Click" Cursor="Hand" />
+                <MisControles:BotonUC x:Name="Opcion3BotonUC" Titulo="Ejemplo 3" Grid.Row="3" Margin="2" Click="Opcion3BotonUC_Click" Cursor="Hand" />
+                <MisControles:BotonUC x:Name="Opcion4BotonUC" Titulo="Ejemplo 4" Grid.Row="4" Margin="2" Click="Opcion4BotonUC_Click" Cursor="Hand" />
+            </Grid>
+            <Grid Grid.Column="1" Name="ContenedorGrid">
+
+            </Grid>
+            <Grid/>
         </Grid>
-        <Grid Grid.Column="1" Name="ContenedorGrid">
-            
-        </Grid>
-        <Grid/>
+        <Border Name="CerrarBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="35" Margin="654,33,0,0" VerticalAlignment="Top" Width="40" Background="#FF741212" CornerRadius="50" Cursor="Hand" MouseLeftButtonDown="CerrarBorder_MouseLeftButtonDown" >
+            <Image Source="Imagenes/Cerrar.png"/>
+        </Border>
+        <Border Name="MinimizarBorder" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="35" Margin="19,33,0,0" VerticalAlignment="Top" Width="40" Background="#FF741212" CornerRadius="50" Cursor="Hand" MouseLeftButtonDown="MinimizarBorder_MouseLeftButtonDown">
+            <Image Source="Imagenes/Minimizar.png"/>
+        </Border>
+
     </Grid>
+    
 </Window>

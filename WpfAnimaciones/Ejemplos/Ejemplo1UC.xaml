@@ -6,6 +6,41 @@
              xmlns:local="clr-namespace:WpfAnimaciones.Ejemplos"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Storyboard x:Key="OnLoaded1">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="39.767"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="91.395"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="117.907"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="119.302"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="133.953"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="194.651"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="23.721"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="68.372"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="82.325"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="117.906"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="154.883"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="175.116"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="ellipse">
+                <EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FF05659C"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.2" Value="#FF1B76AA"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="#FF05659C"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.4" Value="#FF7CA9C3"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.5" Value="#FF05659C"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.6" Value="#FF3C9C05"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource OnLoaded1}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
@@ -13,7 +48,20 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Ejemplo 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="#FF970707" />
         <Grid>
-            
+
         </Grid>
+        <Ellipse x:Name="ellipse" Fill="#FF05659C"  HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" Stroke="Black" Width="70.464" Height="73.256" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                    
+                </TransformGroup>
+            
+            </Ellipse.RenderTransform>
+            
+        </Ellipse>
     </Grid>
 </UserControl>

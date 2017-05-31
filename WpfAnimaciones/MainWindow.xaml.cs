@@ -54,8 +54,17 @@ namespace WpfAnimaciones
             Ejemplos.Ejemplo4UC ejemplo4 = new Ejemplos.Ejemplo4UC(); //Instancia la clase 
             ContenedorGrid.Children.Add(ejemplo4);  //agregamos el objeto creado al area contenedora
         }
+
         #endregion
 
+        private void CerrarBorder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
 
+        private void MinimizarBorder_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = System.Windows.WindowState.Minimized;
+        }
     }
 }
