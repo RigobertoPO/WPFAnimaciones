@@ -24,12 +24,14 @@ namespace WpfAnimaciones.MisControles
         #region EVENTO
         public event EventHandler Click;
         #endregion
+       
         #region CONSTRUCTOR
         public BotonUC()
         {
             InitializeComponent();
         }
         #endregion
+      
         #region PROPIEDAD
         /// <summary>
         /// Titulo o Nombre mostrado para el Tile
@@ -47,6 +49,7 @@ namespace WpfAnimaciones.MisControles
                 if (e.NewValue != null) ((BotonUC)d).TituloTextBlock.Text = e.NewValue.ToString();
             }));
         #endregion
+       
         #region EVENTOS DE CONTROLES
         private void BotonGrid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {

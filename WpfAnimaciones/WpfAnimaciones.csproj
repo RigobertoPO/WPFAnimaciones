@@ -53,6 +53,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Ejemplos\Ejemplo1UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ejemplos\Ejemplo2UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ejemplos\Ejemplo3UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ejemplos\Ejemplo4UC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -60,6 +76,18 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ejemplos\Ejemplo1UC.xaml.cs">
+      <DependentUpon>Ejemplo1UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ejemplos\Ejemplo2UC.xaml.cs">
+      <DependentUpon>Ejemplo2UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ejemplos\Ejemplo3UC.xaml.cs">
+      <DependentUpon>Ejemplo3UC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ejemplos\Ejemplo4UC.xaml.cs">
+      <DependentUpon>Ejemplo4UC.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
