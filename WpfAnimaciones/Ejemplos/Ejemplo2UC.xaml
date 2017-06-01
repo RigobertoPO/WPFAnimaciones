@@ -6,13 +6,88 @@
              xmlns:local="clr-namespace:WpfAnimaciones.Ejemplos"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <UserControl.Resources>
+        <Storyboard x:Key="EnviarStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Pelota">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="40.465"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="78.139"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="135.348"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="173.72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="205.813"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="313.953"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Pelota">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="20.233"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="51.628"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="53.721"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="33.488"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="23.721"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-11.163"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="RegresarStoryboard">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Pelota">
+                <EasingDoubleKeyFrame KeyTime="0" Value="340.465"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="259.535"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="179.302"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="112.325"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="40.465"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="16.046"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Pelota">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-18.837"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-52.325"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-71.162"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-69.767"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-53.72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-41.86"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-24.418"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Ejemplo 2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="#FF970707" />
-        <Grid>
+        <StackPanel Orientation="Vertical" >
+            <TextBlock Text="Ejemplo 2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="#FF970707" d:IsHidden="True" />
+            <TextBlock HorizontalAlignment="Center" Text="Ejecutar StoryBoard desde un Trigger" d:IsHidden="True" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Ellipse Name="Pelota" Width="80" Height="80" Stretch="Fill" StrokeThickness="5" StrokeLineJoin="Round" Stroke="#FF050608" HorizontalAlignment="Left" RenderTransformOrigin="0.5,0.5" >
+                    <Ellipse.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Ellipse.RenderTransform>
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="-0.0217391,0.5" EndPoint="1.02174,0.5">
+                            <LinearGradientBrush.GradientStops>
+                                <GradientStop Color="#FF126DCA" Offset="0"/>
+                                <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                            </LinearGradientBrush.GradientStops>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+
+            </Grid>
+            <Grid Grid.Row="1"  >
+                <Button Name="EnviarButton" Width="100" Content="Enviar" Margin="2" HorizontalAlignment="Left" Click="EnviarButton_Click" d:IsHidden="True"/>
+                <Button Name="RegresarButton" Width="100" Content="Regresar" Margin="2" HorizontalAlignment="Right" Click="RegresarButton_Click" d:IsHidden="True"/>
+            </Grid>
 
         </Grid>
     </Grid>

@@ -43,25 +43,29 @@
     </UserControl.Triggers>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Ejemplo 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="#FF970707" />
-        <Grid>
+        <StackPanel Orientation="Vertical" >
+            <TextBlock Text="Ejemplo 1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18" Foreground="#FF970707" />
+            <TextBlock HorizontalAlignment="Center" Text="Ejecutar StoryBoard desde un Trigger" />
+        </StackPanel>
+        
+        <Grid Grid.Row="1">
+            <Ellipse x:Name="ellipse" Fill="#FF05659C"  HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" Stroke="Black" Width="70.464" Height="73.256" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <Ellipse.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
 
+                    </TransformGroup>
+
+                </Ellipse.RenderTransform>
+
+            </Ellipse>
         </Grid>
-        <Ellipse x:Name="ellipse" Fill="#FF05659C"  HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" Stroke="Black" Width="70.464" Height="73.256" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
-            <Ellipse.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                    
-                </TransformGroup>
-            
-            </Ellipse.RenderTransform>
-            
-        </Ellipse>
+      
     </Grid>
 </UserControl>
